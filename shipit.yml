@@ -1,0 +1,7 @@
+dependencies:
+  override: []
+
+deploy:
+  max_commits: # Automatically deploy all commits, no matter how many.
+  override:
+    - milano_url=${MILANO_URL} milano_api_key=${MILANO_API_KEY} bin/deploy

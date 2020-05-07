@@ -1,0 +1,6 @@
+#!/bin/bash
+
+echo "URL: $milano_url"
+echo "KEY: $milano_api_key"
+
+curl --location --request GET "$milano_url/api/review_stacks" --header "X-Token: $milano_api_key"
