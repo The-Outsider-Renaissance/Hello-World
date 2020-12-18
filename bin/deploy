@@ -1,12 +1,21 @@
-#!/bin/sh
+#!/usr/bin/env bash
 
 set -e
 
-echo "Simulating a Deployment\n"
-echo "pretending to do something for a few seconds"
+id="${id:-}"
+
+if [[ "$id" == "boom" ]]
+then
+    sleep 3
+    echo "$id failed"
+    exit 1
+fi
+
+echo "Simulating a Deployment $id - pretending to do something for a few seconds"
 for i in $(seq 1 10)
 do
-    printf '.'
+    echo "$id $i"
     sleep 1
 done
-echo "\ndone."
+
+echo "done."

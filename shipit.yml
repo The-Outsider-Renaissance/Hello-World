@@ -4,7 +4,23 @@ dependencies:
 deploy:
   max_commits: # Automatically deploy all commits, no matter how many.
   override:
-    - bin/deployer bash -lc "bin/deploy"
+    - |
+      #! /usr/bin/env bash
+      pids=()
+      bin/deployer bash -lc "id=wumpus bin/deploy" &
+      pids+=($!)
+      bin/deployer bash -lc "id=boom bin/deploy" &
+      pids+=($!)
+      bin/deployer bash -lc "id=bumpus bin/deploy" &
+      pids+=($!)
+      status=0
+      echo "pids: ${pids[*]}"
+      for pid in ${pids[*]}
+      do
+        wait "$pid" || (( status+=1 ))
+      done
+      echo "Status:  $status"
+      exit $status
 
 tasks:
   restart:
