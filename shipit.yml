@@ -10,19 +10,16 @@ deploy:
       bin/deployer bash -lc "id=wumpus bin/deploy" &
       pids="${pids} $!"
 
-      bin/deployer bash -lc "id=boom bin/deploy" &
-      pids="${pids} $!"
-
       bin/deployer bash -lc "id=bumpus bin/deploy" &
       pids="${pids} $!"
 
-      errors=0
-      for pid in ${pids}
-      do
-          wait "${pid}" || errors=1
+      status=0
+      for pid in ${pids}; do
+          wait "${pid}" || (( status+=1 ))
       done
 
-      exit "$errors"
+      echo "Exit status: $status"
+      exit $status
 
 tasks:
   restart:
