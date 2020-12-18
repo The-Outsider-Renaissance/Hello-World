@@ -22,7 +22,7 @@ deploy:
           wait "${pid}" || errors=1
       done
 
-      echo "# Status: ${errors}"
+      exit "$errors"
 
 tasks:
   restart:
