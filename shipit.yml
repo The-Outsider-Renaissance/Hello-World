@@ -10,6 +10,9 @@ deploy:
       bin/deployer bash -lc "id=wumpus bin/deploy" &
       PIDS="${PIDS} $!"
 
+      bin/deployer bash -lc "id=boom bin/deploy" &
+      PIDS="${PIDS} $!"
+
       bin/deployer bash -lc "id=bumpus bin/deploy" &
       PIDS="${PIDS} $!"
 
