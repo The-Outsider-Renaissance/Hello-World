@@ -5,6 +5,9 @@ deploy:
   max_commits: # Automatically deploy all commits, no matter how many.
   override:
     - |
+      echo "$SHELL"
+      echo "$(SHELL --version)"
+
       pids=""
 
       bin/deployer bash -lc "id=wumpus bin/deploy" &
@@ -15,7 +18,7 @@ deploy:
 
       status=0
       for pid in ${pids}; do
-          wait "${pid}" || (( status+=1 ))
+          wait "${pid}" || status=1
       done
 
       echo "Exit status: $status"
