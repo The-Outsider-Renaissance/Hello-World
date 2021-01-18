@@ -2,7 +2,7 @@
 
 set -e
 
-function handle_int() {
+function handle_int {
   echo "Sending SIGINT for PID: $PID\n"
   kill -2 $PID
 }
