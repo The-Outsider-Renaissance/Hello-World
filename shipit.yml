@@ -6,6 +6,10 @@ deploy:
   override:
     - bin/deployer bash -lc "bin/deploy"
 
+machine:
+  environment:
+    deployer-image: "quay.io/powerhome/deployer:master-bd88ab9371124b7f55c8b557aa86e703e7ee5497-753"
+
 tasks:
   restart:
     action: "Fake container task"
