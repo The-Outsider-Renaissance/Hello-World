@@ -1,7 +1,7 @@
 apiVersion: backstage.io/v1alpha1
 kind: Component
 metadata:
-  name: hello-world
+  name: hello-world-docs
   # This is an extra long description
   description: This is a test of Portal connectivity to Github
   annotations:
