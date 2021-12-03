@@ -1,12 +1,11 @@
 apiVersion: backstage.io/v1alpha1
 kind: Component
 metadata:
-  name: hello-world-docs
-  # This is an extra long description
-  description: This is a test of Portal connectivity to Github
+  name: the-real-hello-world-docs
+  description: This is a real test of Portal connectivity to Github
   annotations:
     backstage.io/techdocs-ref: dir:.
 spec:
-  type: service
+  type: website
   lifecycle: experimental
   owner: team-c
