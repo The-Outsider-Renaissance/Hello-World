@@ -2,4 +2,4 @@ site_name: 'Z'
 site_description: 'i am z'
 
 nav:
-  - Home: index.md
+  - Home: README.md
