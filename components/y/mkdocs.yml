@@ -1,0 +1,5 @@
+site_name: 'Y'
+site_description: 'i am y'
+
+nav:
+  - Home: index.md
