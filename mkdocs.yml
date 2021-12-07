@@ -2,5 +2,6 @@ site_name: 'Portal Documentation'
 site_description: 'The centralized resource for managing Portal and Portal entities'
 nav:
   - Home: README.md
+  - "Test Doc": Test Doc.md
 theme:
   name: material
