@@ -3,3 +3,5 @@ site_description: 'The centralized resource for managing Portal and Portal entit
 nav:
   - Home: index.md
   - "Test Doc": Test Doc.md
+plugins:
+  - techdocs-core
