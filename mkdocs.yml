@@ -1,0 +1,6 @@
+site_name: 'Portal Documentation'
+site_description: 'The centralized resource for managing Portal and Portal entities'
+nav:
+  - Home: index.md
+plugins:
+  - techdocs-core 
