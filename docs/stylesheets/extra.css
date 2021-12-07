@@ -1,0 +1,26 @@
+:root {
+    --md-primary-fg-color:        #46CDCF;
+    --md-primary-fg-color--light: #ABEDD8;
+    --md-primary-fg-color--dark:  #14FFEC;
+    --md-primary-bg-color--dark:#212121;
+    --md-accent-fg-color--dark: #323232;
+   }
+   
+   :root {
+    --md-admonition-icon--pied-piper: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-right-fill" viewBox="0 0 16 16"><path d="m12.14 8.753-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z"/></svg>')
+   }
+   .md-typeset .admonition.pied-piper,
+   .md-typeset details.pied-piper {
+    border-color: #0D7377;
+   }
+   .md-typeset .pied-piper > .admonition-title,
+   .md-typeset .pied-piper > summary {
+    background-color: #323232);
+    border-color: #14FFEC);
+   }
+   .md-typeset .pied-piper > .admonition-title::before,
+   .md-typeset .pied-piper > summary::before {
+    background-color: #0D7377;
+    -webkit-mask-image: var(--md-admonition-icon--pied-piper);
+            mask-image: var(--md-admonition-icon--pied-piper);
+   } 
