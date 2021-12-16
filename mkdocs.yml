@@ -2,5 +2,6 @@ site_name: 'Hello World'
 site_description: 'Test application to test connectivity with Git.'
 nav:
   - Home: index.md
+  - FAQ: faq.md
 plugins:
   - techdocs-core 
