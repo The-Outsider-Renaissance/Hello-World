@@ -19,7 +19,7 @@ metadata:
   title: Test Component
   description: This is a test of Portal connectivity to Github
   links:
-    - url: https://portal-staging.powerapp.cloud/
+    - url: TBD
       title: Portal Production
       icon: public
     - url: https://portal-staging.powerapp.cloud/
