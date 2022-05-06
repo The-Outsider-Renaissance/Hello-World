@@ -34,7 +34,7 @@ spec:
   system: hello-world
 ---
 apiVersion: backstage.io/v1alpha1
-kind: Component
+kind: Location
 metadata:
   name: tempo-subcomponents
   description: Tempo Subcomponent Definitions
