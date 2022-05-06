@@ -3,7 +3,7 @@ kind: System
 metadata:
   name: tempo
   title: Tempo
-  description: Loan servicing by Stream Financial
+  description: Loan servicing by Stream Financial - test
   annotations:
     backstage.io/techdocs-ref: dir:.
     sentry.io/project-slug: tempo
