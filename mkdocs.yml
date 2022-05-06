@@ -1,5 +1,5 @@
 site_name: 'Hello World'
-site_description: 'Test application to test connectivity with Git.'
+site_description: 'Test application to test connectivity with Git. Testing'
 nav:
   - Home: index.md
 plugins:
