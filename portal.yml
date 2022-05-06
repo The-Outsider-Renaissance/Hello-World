@@ -32,4 +32,12 @@ spec:
   owner: team-c
   lifecycle: experimental
   system: hello-world
-
+---
+apiVersion: backstage.io/v1alpha1
+kind: Location
+metadata:
+  name: tempo-subcomponents
+  description: Tempo Subcomponent Definitions
+spec:
+  targets:
+    - ./components/*/portal.yml
