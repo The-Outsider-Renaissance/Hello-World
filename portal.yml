@@ -3,7 +3,7 @@ kind: Component
 metadata:
   name: hello-world
   # This is an extra long description
-  description: This is a test of Portal connectivity to Github - testing
+  description: This is a test of Portal connectivity to Github - test
   annotations:
     backstage.io/techdocs-ref: dir:.
     pagerduty.com/integration-key: f9bec7c325134e00c0af1e640eeaf6c8
@@ -32,3 +32,12 @@ spec:
   owner: team-c
   lifecycle: experimental
   system: hello-world
+---
+apiVersion: backstage.io/v1alpha1
+kind: Location
+metadata:
+  name: tempo-subcomponents
+  description: Tempo Subcomponent Definitions
+spec:
+  targets:
+    - ./components/*/portal.yml
