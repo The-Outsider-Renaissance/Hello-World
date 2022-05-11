@@ -3,7 +3,7 @@ kind: Component
 metadata:
   name: hello-world
   # This is an extra long description
-  description: This is a test of Portal connectivity to Github - testing
+  description: This is a test of Portal connectivity to Github - test
   annotations:
     backstage.io/techdocs-ref: dir:.
     pagerduty.com/integration-key: f9bec7c325134e00c0af1e640eeaf6c8
@@ -34,7 +34,7 @@ spec:
   system: hello-world
 ---
 apiVersion: backstage.io/v1alpha1
-kind: Component
+kind: Component2
 metadata:
   name: tempo-admin
   title: Tempo Admin
