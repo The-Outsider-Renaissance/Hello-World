@@ -46,3 +46,6 @@ metadata:
 spec:
   type: library
   owner: eternals
+  system: tempo
+  lifecycle: production
+  subcomponentOf: tempo-web
