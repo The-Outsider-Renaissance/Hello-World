@@ -33,12 +33,19 @@ spec:
   lifecycle: experimental
   system: hello-world
 ---
+test:
+  duplicate: 1
+  duplicate: 2
 apiVersion: backstage.io/v1alpha1
 kind: Component2
 metadata:
   name: tempo-admin
   title: Tempo Admin
   description: A place for feature toggles, application settings, and other administration related functionality to live.
+  links:
+    - url: TBD
+      title: Test error3
+      icon: public
 spec:
   type: library
   owner: eternals
