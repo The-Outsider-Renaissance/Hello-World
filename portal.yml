@@ -1,171 +1,51 @@
 apiVersion: backstage.io/v1alpha1
-kind: System
+kind: Component
 metadata:
-  name: tempo
-  title: Tempo
-  description: Loan servicing by Stream Financial!
+  name: hello-world
+  # This is an extra long description
+  description: This is a test of Portal connectivity to Github - testing
   annotations:
     backstage.io/techdocs-ref: dir:.
-    sentry.io/project-slug: tempo
-    pagerduty.com/integration-key: 07647e8226dc4e05c0b9952e06ca4f01
-    jenkins.io/github-folder: powerhome/tempo
-  links:
-    - url: https://tempo.streamfinancial.io/
-      title: Tempo Production
-      icon: public
-    - url: https://tempo.staging.streamfinancial.io/
-      title: Tempo Staging
-      icon: build
-    - url: https://tempo.streamfinancial.io/docs
-      title: Tempo GraphQL Docs
-      icon: public
+    pagerduty.com/integration-key: f9bec7c325134e00c0af1e640eeaf6c8
 spec:
-  owner: eternals
-  lifecycle: production
-  domain: stream
+  type: service
+  lifecycle: experimental
+  owner: team-c
 ---
 apiVersion: backstage.io/v1alpha1
 kind: Component
 metadata:
-  name: tempo-web
-  title: Tempo Web
-  description: Tempo Web Application
+  name: hello-world-component
+  title: Test Component
+  description: This is a test of Portal connectivity to Github
+  links:
+    - url: TBD
+      title: Portal Production
+      icon: public
+    - url: https://portal-staging.powerapp.cloud/
+      title: Portal Staging
+      icon: build
   annotations:
-    sentry.io/project-slug: tempo
-    pagerduty.com/integration-key: 07647e8226dc4e05c0b9952e06ca4f01
-    jenkins.io/github-folder: powerhome/tempo
+    backstage.io/techdocs-ref: dir:.
 spec:
   type: web-application
-  owner: eternals
-  system: tempo
-  lifecycle: production
-  providesApis:
-    - api:tempo-graphql-api
-  dependsOn:
-    - resource:tempo-mysql
-    - resource:tempo-production-bucket
-    - resource:tempo-development-bucket
-    - resource:tempo-elasticsearch
-    - resource:tempo-openldap
+  owner: team-c
+  lifecycle: experimental
+  system: hello-world
 ---
 apiVersion: backstage.io/v1alpha1
-kind: Location
+kind: Component2
 metadata:
-  name: tempo-subcomponents
-  description: Tempo Subcomponent Definitions
-spec:
-  targets:
-    - ./components/*/portal.yml
----
-apiVersion: backstage.io/v1alpha1
-kind: API
-metadata:
-  name: tempo-graphql-api
-  description: Tempo GraphQL
+  name: tempo-admin
+  title: Tempo Admin
+  description: A place for feature toggles, application settings, and other administration related functionality to live.
   links:
-    - url: https://tempo.streamfinancial.io/docs
-      title: Tempo GraphQL Docs
+    - url: TBD
+      title: Test error
       icon: public
 spec:
-  type: graphql
-  lifecycle: production
-  owner: eternals
-  system: tempo
-  definition: |
-    type Query {
-      stubbed: String
-    }
----
-apiVersion: backstage.io/v1alpha1
-kind: Resource
-metadata:
-  name: tempo-mysql
-  description: Tempo's Percona Cluster
-  tags:
-    - relational
-    - mysql
-    - pxc
-    - percona
-spec:
-  type: database
-  owner: eternals
-  system: tempo
----
-apiVersion: backstage.io/v1alpha1
-kind: Resource
-metadata:
-  name: tempo-elasticsearch
-  description: Tempo's Elasticsearch Cluster
-  tags:
-    - search-engine
-    - elasticsearch
-spec:
-  type: database
-  owner: eternals
-  system: tempo
----
-apiVersion: backstage.io/v1alpha1
-kind: Resource
-metadata:
-  name: tempo-redis
-  description: Tempo's HA Redis Cluster
-  tags:
-    - key-value
-    - redis
-spec:
-  type: database
-  owner: eternals
-  system: tempo
----
-apiVersion: backstage.io/v1alpha1
-kind: Resource
-metadata:
-  name: tempo-openldap
-  description: OpenLDAP Software is an open source implementation of the Lightweight Directory Access Protocol.
-  tags:
-    - directory
-    - openldap
-spec:
-  type: database
+  type: library
   owner: eternals
   system: tempo
   lifecycle: production
----
-apiVersion: backstage.io/v1alpha1
-kind: Resource
-metadata:
-  name: tempo-production-bucket
-  links:
-    - url: s3://s3.powerhrg.com/tempo-production/
-      title: S3 URL
-      icon: cloudupload
-spec:
-  type: bucket
-  owner: eternals
-  system: tempo
----
-apiVersion: backstage.io/v1alpha1
-kind: Resource
-metadata:
-  name: tempo-staging-bucket
-  links:
-    - url: s3://s3.powerhrg.com/tempo-staging/
-      title: S3 URL
-      icon: cloudupload
-spec:
-  type: bucket
-  owner: eternals
-  system: tempo
----
-apiVersion: backstage.io/v1alpha1
-kind: Resource
-metadata:
-  name: tempo-devbox-bucket
-  links:
-    - url: s3://s3.powerhrg.com/tempo-devbox/
-      title: S3 URL
-      icon: cloudupload
-spec:
-  type: bucket
-  owner: eternals
-  system: tempo
+  subcomponentOf: tempo-web
