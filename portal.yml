@@ -4,10 +4,6 @@ metadata:
   name: tempo-admin
   title: Tempo Admin
   description: A place for feature toggles, application settings, and other administration related functionality to live.
-  links:
-    - url: TBD
-      title: Test error2
-      icon: public
 spec:
   type: library
   owner: eternals
