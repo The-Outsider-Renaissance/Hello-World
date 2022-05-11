@@ -34,10 +34,15 @@ spec:
   system: hello-world
 ---
 apiVersion: backstage.io/v1alpha1
-kind: Location
+kind: Component2
 metadata:
-  name: tempo-subcomponents
-  description: Tempo Subcomponent Definitions
+  name: tempo-admin
+  title: Tempo Admin
+  description: A place for feature toggles, application settings, and other administration related functionality to live.
+  links:
+    - url: TBD
+      title: Test error
+      icon: public
 spec:
-  targets:
-    - ./components/*/portal.yml
+  type: library
+  owner: eternals
