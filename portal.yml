@@ -57,4 +57,4 @@ metadata:
   description: Test location
 spec:
   targets:
-    - ./*/*.yml
+    - ./**/*.yml
