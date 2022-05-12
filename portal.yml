@@ -32,7 +32,7 @@ spec:
   owner: team-c
   lifecycle: experimental
   system: hello-world
---
+---
 apiVersion: backstage.io/v1alpha1
 kind: Component2
 metadata:
