@@ -1,7 +1,3 @@
-# System hello-world
-# Component hello-world-web
-# Resource hello-world-mysql
-
 apiVersion: backstage.io/v1alpha1
 kind: System
 metadata:
@@ -12,3 +8,33 @@ spec:
   owner: guardians-of-the-galaxy
   domain: technology-foundations-and-tools
   lifecycle: experimental
+---
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: hello-world-web
+  title: Hello World Web
+  description: Web component for hello-world
+  links:
+    - url: https://google.com
+      title: Hello World Production
+      icon: public
+spec:
+  type: web-application
+  owner: guardians-of-the-galaxy
+  lifecycle: experimental
+  system: hello-world
+  dependsOn:
+    - resource:hello-world-mysql
+---
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: hello-world-mysql
+  description: HelloWorld MySQL Database
+  tags:
+    - relational
+spec:
+  type: database
+  owner: guardians-of-the-galaxy
+  system: hello-world
