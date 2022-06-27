@@ -1,0 +1,14 @@
+# System hello-world
+# Component hello-world-web
+# Resource hello-world-mysql
+
+apiVersion: backstage.io/v1alpha1
+kind: System
+metadata:
+  name: hello-world
+  title: Hello World
+  description: Cool test app
+spec:
+  owner: guardians-of-the-galaxy
+  domain: technology-foundations-and-tools
+  lifecycle: experimental
