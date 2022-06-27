@@ -4,6 +4,8 @@ metadata:
   name: hello-world
   title: Hello World
   description: Cool test app
+  annotations:
+    backstage.io/techdocs-ref: dir:.
 spec:
   owner: guardians-of-the-galaxy
   domain: technology-foundations-and-tools
