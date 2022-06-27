@@ -25,7 +25,7 @@ spec:
   lifecycle: experimental
   system: hello-world
   dependsOn:
-    - resource:
+    - resource:hello-world-mysql
 ---
 apiVersion: backstage.io/v1alpha1
 kind: Resource
