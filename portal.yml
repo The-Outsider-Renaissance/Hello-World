@@ -12,8 +12,8 @@ spec:
 apiVersion: backstage.io/v1alpha1
 kind: Component
 metadata:
-  name: hello-world-web!
-  title: Hello World Web!
+  name: hello-world-web
+  title: Hello World Web
   description: Web component for hello-world
   links:
     - url: https://google.com
