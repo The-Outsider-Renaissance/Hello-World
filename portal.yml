@@ -14,7 +14,7 @@ spec:
 apiVersion: backstage.io/v1alpha1
 kind: Component
 metadata:
-  name: hello-world-web!
+  name: hello-world-web
   title: Hello World Web
   description: Web application for Hello World
   links:
