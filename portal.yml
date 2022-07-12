@@ -34,7 +34,7 @@ apiVersion: backstage.io/v1alpha1
 kind: Resource
 metadata:
   name: hello-world-mysql
-  description: MySQL database for Hello World!
+  description: MySQL database for Hello World!!
   tags:
     - relational
 spec:
