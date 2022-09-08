@@ -1,0 +1,12 @@
+apiVersion: cert-manager.io/v1alpha3
+kind: Certificate
+metadata:
+  name: "Test-PR-for-Portal-Templates"
+  namespace: portal-prs
+spec:
+  secretName: portal-tls
+  issuerRef:
+    name: production-certs
+    kind: ClusterIssuer
+  dnsNames:
+    - "*.portal.beta.gm.powerapp.cloud"
