@@ -1,0 +1,12 @@
+apiVersion: cert-manager.io/v1alpha3
+kind: Certificate
+metadata:
+  name: NewApplicationReviewEnvs
+  namespace: NewApplicationReviewEnvs-prs
+spec:
+  secretName: NewApplicationReviewEnvs-tls
+  issuerRef:
+    name: production-certs
+    kind: ClusterIssuer
+  dnsNames:
+    - "*.NewApplicationReviewEnvs.beta.gm.powerapp.cloud"
