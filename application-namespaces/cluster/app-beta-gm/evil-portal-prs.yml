@@ -1,0 +1,12 @@
+apiVersion: cert-manager.io/v1alpha3
+kind: Certificate
+metadata:
+  name: evil-portal
+  namespace: evil-portal-prs
+spec:
+  secretName: evil-portal-tls
+  issuerRef:
+    name: production-certs
+    kind: ClusterIssuer
+  dnsNames:
+    - '*.evil-portal.beta.gm.powerapp.cloud'
