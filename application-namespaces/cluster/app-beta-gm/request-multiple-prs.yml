@@ -1,0 +1,12 @@
+apiVersion: cert-manager.io/v1alpha3
+kind: Certificate
+metadata:
+  name: request-multiple
+  namespace: request-multiple-prs
+spec:
+  secretName: request-multiple-tls
+  issuerRef:
+    name: production-certs
+    kind: ClusterIssuer
+  dnsNames:
+    - '*.request-multiple.beta.gm.powerapp.cloud'
