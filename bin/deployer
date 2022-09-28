@@ -6,7 +6,7 @@ if [ -t 0 ]; then
   INTERACTIVE="--interactive"
 fi
 
-DEPLOYER_IMAGE="quay.io/powerhome/deployer:master-bd88ab9371124b7f55c8b557aa86e703e7ee5497-753"
+DEPLOYER_IMAGE="image-registry.powerapp.cloud/app/deployer:master-467d8015ffc91fc62c347367db792bb6de0eeea8-1439"
 DEPLOYER_MOUNTS="--mount type=bind,source=$(pwd),destination=/app --mount type=bind,source=${HOME}/.kube,destination=/root/.kube"
 RUN_DEPLOYER="docker run --tty ${INTERACTIVE} ${EXTRA_ARGS} --rm --env DEV_USERNAME=$(whoami) ${DEPLOYER_MOUNTS} ${DEPLOYER_IMAGE}"
 
