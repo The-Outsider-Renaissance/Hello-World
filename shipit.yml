@@ -12,3 +12,8 @@ tasks:
     description: "Pretend to run a task inside a tooling container"
     steps:
       - ./bin/deployer bash -lc "echo 'Pretending to run a task'"
+  test:
+    action: "Test"
+    steps:
+      - docker pull image-registry.powerapp.cloud/powermail/kube-mailstack-tests:1.0.0-python3.9.13-alpine3.15
+    allow_concurrency: false
