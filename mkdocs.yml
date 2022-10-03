@@ -1,7 +1,4 @@
 site_name: Hello World
 site_description: Hello World Documentation
-nav:
-  - 'Home': 'README.md'
-  - 'Example Docs': 'EXAMPLE.md'
 plugins:
   - techdocs-core
