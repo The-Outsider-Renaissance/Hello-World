@@ -2,3 +2,11 @@ site_name: Hello World
 site_description: Hello World Documentation
 plugins:
   - techdocs-core
+  - markdownextradata:
+      jinja_options:
+        variable_start_string: '{['
+        variable_end_string: ']}'
+
+extra:
+  test:
+    value: I was interpolated
