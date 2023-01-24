@@ -13,6 +13,22 @@ spec:
   lifecycle: experimental
 ---
 apiVersion: backstage.io/v1alpha1
+kind: System
+metadata:
+  name: Test-Case
+  title: Test Case
+  description: Test letter casing in name
+  annotations:
+    backstage.io/techdocs-ref: dir:.
+    github.com/project-slug: The-Outsider-Renaissance/Hello-World
+spec:
+  owner: guardians-of-the-galaxy
+  domain: collaboration
+  lifecycle: experimental
+  dependsOn:
+    - system:hello-world
+---
+apiVersion: backstage.io/v1alpha1
 kind: Component
 metadata:
   name: hello-world-web
