@@ -1,0 +1,12 @@
+apiVersion: cert-manager.io/v1
+kind: Certificate
+metadata:
+  name: default-container-resource-allocations
+  namespace: default-container-resource-allocations-prs
+spec:
+  secretName: default-container-resource-allocations-tls
+  issuerRef:
+    name: production-certs
+    kind: ClusterIssuer
+  dnsNames:
+    - '*.default-container-resource-allocations.beta.gm.powerapp.cloud'
