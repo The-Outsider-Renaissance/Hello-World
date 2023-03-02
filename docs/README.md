@@ -1,3 +1,3 @@
 # Hello-World New
 
-Some trivial change to the docs...
+Some trivial change to the docs
