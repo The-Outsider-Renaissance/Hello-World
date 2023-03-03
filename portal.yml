@@ -1,7 +1,7 @@
 apiVersion: backstage.io/v1alpha1
 kind: System
 metadata:
-  name: hello-world-something
+  name: hello-world-something-new
   title: Hello World
   description: Cool test app
   annotations:
