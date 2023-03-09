@@ -57,3 +57,67 @@ spec:
   type: database
   owner: guardians-of-the-galaxy
   system: hello-world
+---
+apiVersion: backstage.io/v1alpha1
+kind: System
+metadata:
+  name: Test-Case
+  title: Test Case
+  description: Test letter casing in name
+  namespace: test-namespace
+  annotations:
+    backstage.io/techdocs-ref: dir:.
+    github.com/project-slug: The-Outsider-Renaissance/Hello-World
+spec:
+  owner: guardians-of-the-galaxy
+  domain: collaboration
+  lifecycle: experimental
+  dependsOn:
+    - system:hello-world
+---
+apiVersion: backstage.io/v1alpha1
+kind: System
+metadata:
+  name: hello-world
+  title: Hello World
+  description: Cool test app
+  namespace: test-namespace
+  annotations:
+    backstage.io/techdocs-ref: dir:.
+    github.com/project-slug: The-Outsider-Renaissance/Hello-World
+spec:
+  owner: guardians-of-the-galaxy
+  domain: collaboration
+  lifecycle: experimental
+---
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: hello-world-web
+  title: Hello World Web
+  description: Web application for Hello World
+  namespace: test-namespace
+  links:
+    - url: https://google.com
+      title: Hello World Staging
+      icon: public
+spec:
+  type: web-application
+  owner: guardians-of-the-galaxy
+  lifecycle: experimental
+  system: hello-world
+  dependsOn:
+    - resource:hello-world-mysql
+---
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: hello-world-mysql
+  description: MySQL database for Hello World
+  namespace: test-namespace
+  tags:
+    - relational
+spec:
+  type: database
+  owner: guardians-of-the-galaxy
+  system: hello-world
