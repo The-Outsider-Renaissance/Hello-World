@@ -1,6 +1,6 @@
-# Super important documentation!!
+# Super important documentation!
 
-Welcome 
+Welcome
 
 ## markdownextradata test
 
