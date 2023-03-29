@@ -1,0 +1,12 @@
+apiVersion: backstage.io/v1alpha1
+kind: System
+metadata:
+  name: new-system
+  title: New System
+  description: Cool test app
+  annotations:
+    github.com/project-slug: The-Outsider-Renaissance/Hello-World
+spec:
+  owner: guardians-of-the-galaxy
+  domain: collaboration
+  lifecycle: experimental

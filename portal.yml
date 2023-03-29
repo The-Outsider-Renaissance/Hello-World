@@ -121,3 +121,12 @@ spec:
   type: database
   owner: guardians-of-the-galaxy
   system: hello-world
+---
+apiVersion: backstage.io/v1alpha1
+kind: Location
+metadata:
+  name: test-location
+  description: Test namespace with locations
+spec:
+  targets:
+    - ./sub/*.yml
