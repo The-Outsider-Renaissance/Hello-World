@@ -1,0 +1,4 @@
+site_name: Sub Document
+site_description: Sub Documentation
+plugins:
+  - techdocs-core

@@ -6,6 +6,7 @@ plugins:
       jinja_options:
         variable_start_string: '{['
         variable_end_string: ']}'
+  - monorepo
 
 extra:
   test:
