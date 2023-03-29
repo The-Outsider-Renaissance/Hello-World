@@ -1,5 +1,9 @@
 site_name: Hello World
 site_description: Hello World Documentation
+nav:
+  - "Home": "README.md"
+  - "Example": "EXAMPLE.md"
+  - "Sub": '*include ./sub/mkdocs.yml'
 plugins:
   - techdocs-core
   - markdownextradata:
