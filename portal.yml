@@ -129,4 +129,4 @@ metadata:
   description: Test namespace with locations
 spec:
   targets:
-    - ./sub/*.yml
+    - ./sub/portal.yml
