@@ -1,0 +1,12 @@
+apiVersion: cert-manager.io/v1
+kind: Certificate
+metadata:
+  name: should-have-pagerduty-key
+  namespace: should-have-pagerduty-key-prs
+spec:
+  secretName: should-have-pagerduty-key-tls
+  issuerRef:
+    name: production-certs
+    kind: ClusterIssuer
+  dnsNames:
+    - '*.should-have-pagerduty-key.beta.hq.powerapp.cloud'
