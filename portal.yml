@@ -5,6 +5,9 @@ metadata:
   title: Hello World
   description: Cool test app
   annotations:
+    nitro.powerhrg.com/deployment-connect-room:
+      - "8978"
+      - "1234"
     backstage.io/techdocs-ref: dir:.
     github.com/project-slug: The-Outsider-Renaissance/Hello-World
 spec:
