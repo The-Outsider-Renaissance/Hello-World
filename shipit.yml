@@ -4,7 +4,9 @@ dependencies:
 deploy:
   max_commits: # Automatically deploy all commits, no matter how many.
   override:
-    - deployer_bash -lc "bin/deploy"
+    - printenv
+    - cat /etc/profile
+    #- deployer_bash -lc "bin/deploy"
 
 machine:
   environment:
