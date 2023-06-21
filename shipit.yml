@@ -5,6 +5,7 @@ deploy:
   max_commits: # Automatically deploy all commits, no matter how many.
   override:
     - printenv
+    - whoami
     - cat /etc/profile
     - deployer_bash -lc "bin/deploy"
 
