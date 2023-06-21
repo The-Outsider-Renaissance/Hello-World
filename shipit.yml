@@ -6,7 +6,7 @@ deploy:
   override:
     - printenv
     - cat /etc/profile
-    #- deployer_bash -lc "bin/deploy"
+    - deployer_bash -lc "bin/deploy"
 
 machine:
   environment:
