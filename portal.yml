@@ -3,7 +3,7 @@ kind: System
 metadata:
   name: hello-world
   title: Hello World
-  description: Cool test app!!
+  description: Cool test app!!!
   annotations:
     backstage.io/techdocs-ref: dir:.
     github.com/project-slug: The-Outsider-Renaissance/Hello-World
