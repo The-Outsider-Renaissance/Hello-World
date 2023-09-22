@@ -15,4 +15,4 @@ tasks:
     action: "Fake container task"
     description: "Pretend to run a task inside a tooling container"
     steps:
-      - deployer_bash -lc "echo 'Pretending to run a task'"
+      - pac_bash -lc "echo 'Pretending to run a task'"
