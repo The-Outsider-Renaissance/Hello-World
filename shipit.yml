@@ -8,11 +8,11 @@ deploy:
     - printenv
     - whoami
     - cat /etc/profile
-    - pac_bash -lc "bin/deploy"
+    - bin/deploy
 
 tasks:
   restart:
     action: "Fake container task"
     description: "Pretend to run a task inside a tooling container"
     steps:
-      - pac_bash -lc "echo 'Pretending to run a task'"
+      - echo 'Pretending to run a task'
