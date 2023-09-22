@@ -8,7 +8,7 @@ deploy:
     - printenv
     - whoami
     - cat /etc/profile
-    - deployer_bash -lc "bin/deploy"
+    - pac_bash -lc "bin/deploy"
 
 tasks:
   restart:
