@@ -20,4 +20,4 @@ tasks:
 rollback:
   override:
     - printenv
-
+    - whoami
