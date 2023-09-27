@@ -6,7 +6,6 @@ deploy: &deploy
   max_commits: # Automatically deploy all commits, no matter how many.
   override:
     - whoami
-    - cat /etc/profile
     - bin/deploy
 
 tasks:
