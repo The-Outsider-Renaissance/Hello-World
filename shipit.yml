@@ -1,9 +1,8 @@
-image: image-registry.powerapp.cloud/app/deployer:master-467d8015ffc91fc62c347367db792bb6de0eeea8-1439
-
 dependencies:
   override: []
 
 deploy:
+  image: image-registry.powerapp.cloud/app/deployer:master-467d8015ffc91fc62c347367db792bb6de0eeea8-1439
   max_commits: # Automatically deploy all commits, no matter how many.
   override:
     - whoami
@@ -18,5 +17,6 @@ tasks:
       - echo 'Pretending to run a task'
 
 rollback:
+  image: image-registry.powerapp.cloud/app/deployer:master-467d8015ffc91fc62c347367db792bb6de0eeea8-1439
   override:
     - whoami
