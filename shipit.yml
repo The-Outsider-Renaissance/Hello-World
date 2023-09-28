@@ -12,6 +12,7 @@ deploy: &deploy
     - echo $STEPS_DIR
     - printenv
     - bin/deploy
+    - vim --help
 
 tasks:
   restart:
