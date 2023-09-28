@@ -6,8 +6,8 @@ deploy: &deploy
   max_commits: # Automatically deploy all commits, no matter how many.
   override:
     - pwd
+    - ls -lah
     - bin/deploy
-    - ls -lah /
     - printenv
 
 tasks:
