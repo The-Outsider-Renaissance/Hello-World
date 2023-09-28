@@ -8,6 +8,7 @@ deploy: &deploy
     - whoami
     - bin/deploy
     - ls -lah /
+    - pwd
 
 tasks:
   restart:
