@@ -7,7 +7,7 @@ deploy: &deploy
   override:
     - whoami
     - bin/deploy
-    - sleep 300
+    - ls -lah /
 
 tasks:
   restart:
