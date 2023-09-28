@@ -10,8 +10,8 @@ deploy: &deploy
     - ls -lah /
     - cat /.bashrc
     - echo "$STEPS_DIR"
-    - bin/deploy
     - printenv
+    - bin/deploy
 
 tasks:
   restart:
