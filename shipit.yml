@@ -9,7 +9,7 @@ deploy: &deploy
     - ls -lah
     - ls -lah /
     - cat /.bashrc
-    - echo "$STEPS_DIR"
+    - echo $STEPS_DIR
     - printenv
     - bin/deploy
 
