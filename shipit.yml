@@ -9,6 +9,7 @@ deploy: &deploy
     - bin/deploy
     - ls -lah /
     - pwd
+    - printenv
 
 tasks:
   restart:
