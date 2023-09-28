@@ -8,6 +8,8 @@ deploy: &deploy
     - pwd
     - ls -lah
     - ls -lah /
+    - cat /.bashrc
+    - echo "$STEPS_DIR"
     - bin/deploy
     - printenv
 
