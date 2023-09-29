@@ -7,12 +7,7 @@ deploy: &deploy
   override:
     - pwd
     - ls -lah
-    - ls -lah /
-    - cat /.bashrc
-    - echo $STEPS_DIR
-    - printenv
     - bin/deploy
-    - vim --help
 
 tasks:
   restart:
