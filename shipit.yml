@@ -10,12 +10,12 @@ deploy: &deploy
     - ls -lah
     - bin/deploy
 
+rollback:
+  <<: *deploy
+
 tasks:
   restart:
     action: "Fake container task"
     description: "Pretend to run a task inside a tooling container"
     steps:
       - echo 'Pretending to run a task'
-
-rollback:
-  <<: *deploy
