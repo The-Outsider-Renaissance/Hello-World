@@ -4,6 +4,7 @@ set -e
 
 echo "Environment: $environment"
 echo "Tag: $tag"
+echo "Test Key: $TEST_KEY"
 echo "Simulating a Deployment\n"
 echo "pretending to do something for a few seconds"
 for i in $(seq 1 10)
