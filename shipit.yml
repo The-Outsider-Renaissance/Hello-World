@@ -8,7 +8,7 @@ deploy: &deploy
   override:
     - pwd
     - ls -lah
-    - bin/deploy
+    - environment=${ENVIRONMENT} tag=${REVISION} bin/deploy
 
 rollback:
   <<: *deploy
