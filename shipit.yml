@@ -8,7 +8,7 @@ deploy: &deploy
   override:
     - pwd
     - ls -lah /
-    - environment=${ENVIRONMENT} tag=${REVISION} bin/deploy
+    - bin/deploy
     - printenv
 
 rollback:
