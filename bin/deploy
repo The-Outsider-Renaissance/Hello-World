@@ -2,8 +2,8 @@
 
 set -e
 
-echo "Environment: $environment"
-echo "Tag: $tag"
+echo "Environment: $ENVIRONMENT"
+echo "Tag: $SHA"
 echo "Test Key: $TEST_KEY"
 echo "Simulating a Deployment\n"
 echo "pretending to do something for a few seconds"
