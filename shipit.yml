@@ -7,8 +7,9 @@ deploy: &deploy
   max_commits: # Automatically deploy all commits, no matter how many.
   override:
     - pwd
-    - ls -lah
+    - ls -lah /
     - environment=${ENVIRONMENT} tag=${REVISION} bin/deploy
+    - printenv
 
 rollback:
   <<: *deploy
