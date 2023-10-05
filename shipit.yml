@@ -6,7 +6,9 @@ deploy: &deploy
   override:
     - pwd
     - ls -lah
+    - printenv
     - bin/deployer bash -lc "bin/deploy"
+    - sleep 300
 
 rollback:
   <<: *deploy
