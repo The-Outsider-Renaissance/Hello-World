@@ -9,7 +9,6 @@ deploy: &deploy
     - pwd
     - ls -lah /
     - bin/deploy
-    - printenv
 
 rollback:
   <<: *deploy
