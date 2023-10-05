@@ -8,7 +8,7 @@ deploy: &deploy
   override:
     - pwd
     - ls -lah /
-    - bin/deploy
+    - test_variable=${ENVIRONMENT}-123 bin/deploy
 
 rollback:
   <<: *deploy
