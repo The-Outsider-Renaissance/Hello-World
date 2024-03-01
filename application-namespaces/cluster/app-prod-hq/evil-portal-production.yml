@@ -1,0 +1,53 @@
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: evil-portal-production
+  labels:
+    powerapp.cloud/global-registry-access: 'yes'
+---
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: default
+  namespace: evil-portal-production
+imagePullSecrets:
+  - name: image-registry-prod-robot-powerhome
+---
+apiVersion: rbac.authorization.k8s.io/v1beta1
+kind: RoleBinding
+metadata:
+  name: deployment-access
+  namespace: evil-portal-production
+subjects:
+- kind: Group
+  name: softwareDelivery
+  apiGroup: rbac.authorization.k8s.io
+- kind: ServiceAccount
+  name: milano
+  namespace: milano-production
+roleRef:
+  kind: ClusterRole
+  name: global:deployer
+  apiGroup: rbac.authorization.k8s.io
+---
+apiVersion: v1
+kind: ResourceQuota
+metadata:
+  name: compute-resources
+  namespace: evil-portal-production
+spec:
+  hard:
+    pods: 1000
+    requests.cpu: 6
+    requests.memory: 8Gi
+    requests.ephemeral-storage: 2Gi
+    limits.cpu: 6
+    limits.memory: 8Gi
+    limits.ephemeral-storage: 2Gi
+    configmaps: 1000
+    requests.storage: 25Gi
+    persistentvolumeclaims: 1000
+    replicationcontrollers: 1000
+    secrets: 1000
+    services: 1000
+    services.loadbalancers: 0
