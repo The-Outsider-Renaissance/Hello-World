@@ -1,0 +1,12 @@
+apiVersion: cert-manager.io/v1alpha3
+kind: Certificate
+metadata:
+  name: wild-wacky-app
+  namespace: wild-wacky-app-prs
+spec:
+  secretName: wild-wacky-app-tls
+  issuerRef:
+    name: production-certs
+    kind: ClusterIssuer
+  dnsNames:
+    - '*.wild-wacky-app.beta.hq.powerapp.cloud'
