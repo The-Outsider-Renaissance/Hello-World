@@ -1,0 +1,12 @@
+apiVersion: cert-manager.io/v1alpha3
+kind: Certificate
+metadata:
+  name: test-app-3
+  namespace: test-app-3-prs
+spec:
+  secretName: test-app-3-tls
+  issuerRef:
+    name: production-certs
+    kind: ClusterIssuer
+  dnsNames:
+    - '*.test-app-3.beta.hq.powerapp.cloud'
