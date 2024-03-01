@@ -1,0 +1,12 @@
+apiVersion: cert-manager.io/v1alpha3
+kind: Certificate
+metadata:
+  name: three-review-envs
+  namespace: three-review-envs-prs
+spec:
+  secretName: three-review-envs-tls
+  issuerRef:
+    name: production-certs
+    kind: ClusterIssuer
+  dnsNames:
+    - '*.three-review-envs.beta.gm.powerapp.cloud'
