@@ -1,0 +1,115 @@
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: has-no-pagerduty-production
+  labels:
+    powerapp.cloud/global-registry-access: 'yes'
+---
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: default
+  namespace: has-no-pagerduty-production
+imagePullSecrets:
+  - name: image-registry-prod-robot-powerhome
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: RoleBinding
+metadata:
+  name: deployment-access
+  namespace: has-no-pagerduty-production
+subjects:
+- kind: Group
+  name: softwareDelivery
+  apiGroup: rbac.authorization.k8s.io
+- kind: ServiceAccount
+  name: milano
+  namespace: milano-production
+roleRef:
+  kind: ClusterRole
+  name: global:deployer
+  apiGroup: rbac.authorization.k8s.io
+---
+apiVersion: v1
+kind: ResourceQuota
+metadata:
+  name: compute-resources
+  namespace: has-no-pagerduty-production
+spec:
+  hard:
+    pods: "50"
+    requests.cpu: "6"
+    requests.memory: "8Gi"
+    requests.ephemeral-storage: "2Gi"
+    limits.cpu: "6"
+    limits.memory: "8Gi"
+    limits.ephemeral-storage: "2Gi"
+    configmaps: "40"
+    requests.storage: "25Gi"
+    persistentvolumeclaims: "20"
+    replicationcontrollers: "0"
+    secrets: "50"
+    services: "30"
+    services.loadbalancers: "0"
+---
+apiVersion: v1
+kind: LimitRange
+metadata:
+  name: default-resources
+  namespace: has-no-pagerduty-production
+spec:
+  limits:
+  - type: Container
+    default:
+      cpu: 100m
+      memory: 100Mi
+      ephemeral-storage: 100Mi
+    defaultRequest:
+      cpu: 100m
+      memory: 100Mi
+      ephemeral-storage: 100Mi
+---
+apiVersion: v1
+kind: Secret
+metadata:
+  name: pagerduty-key-has-no-pagerduty-production
+  namespace: has-no-pagerduty-production
+type: Opaque
+stringData:
+  key: 
+---  
+apiVersion: monitoring.coreos.com/v1alpha1
+kind: AlertmanagerConfig
+metadata:
+  name: has-no-pagerduty-production
+  namespace: has-no-pagerduty-production
+  labels:
+    alertmanager: monitoring
+spec:
+  route:
+    groupBy:
+      - alertname
+      - container
+      - pod
+      - statefulset
+      - replicaset
+      - daemonset
+      - deployment
+      - namespace
+      - targetName
+      - persistentvolumeclaim
+    groupWait: 30s
+    groupInterval: 1m
+    repeatInterval: 5m
+    receiver: 'pagerduty-has-no-pagerduty-production'
+    continue: false
+  receivers:
+  - name: pagerduty-has-no-pagerduty-production
+    pagerdutyConfigs:
+      - url: https://events.pagerduty.com/v2/enqueue
+        severity: '{{ if .CommonLabels.severity }}{{ .CommonLabels.severity | toLower }}{{ else }}critical{{ end }}'
+        description:
+          '[{{ .CommonLabels.cluster }}/{{ .GroupLabels.alertname }}] {{ .CommonAnnotations.description }}'
+        routingKey:
+          key: key
+          name: pagerduty-key-has-no-pagerduty-production
