@@ -1,0 +1,12 @@
+apiVersion: cert-manager.io/v1alpha3
+kind: Certificate
+metadata:
+  name: one-static-env-with-review
+  namespace: one-static-env-with-review-prs
+spec:
+  secretName: one-static-env-with-review-tls
+  issuerRef:
+    name: production-certs
+    kind: ClusterIssuer
+  dnsNames:
+    - '*.one-static-env-with-review.beta.hq.powerapp.cloud'
