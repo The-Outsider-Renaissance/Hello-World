@@ -1,0 +1,53 @@
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: one-review-env-staging
+  labels:
+    powerapp.cloud/global-registry-access: 'yes'
+---
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: default
+  namespace: one-review-env-staging
+imagePullSecrets:
+  - name: image-registry-prod-robot-powerhome
+---
+apiVersion: rbac.authorization.k8s.io/v1beta1
+kind: RoleBinding
+metadata:
+  name: deployment-access
+  namespace: one-review-env-staging
+subjects:
+- kind: Group
+  name: softwareDelivery
+  apiGroup: rbac.authorization.k8s.io
+- kind: ServiceAccount
+  name: milano
+  namespace: milano-production
+roleRef:
+  kind: ClusterRole
+  name: global:deployer
+  apiGroup: rbac.authorization.k8s.io
+---
+apiVersion: v1
+kind: ResourceQuota
+metadata:
+  name: compute-resources
+  namespace: one-review-env-staging
+spec:
+  hard:
+    pods: 1000
+    requests.cpu: 2
+    requests.memory: 2Gi
+    requests.ephemeral-storage: 300Mi
+    limits.cpu: 2
+    limits.memory: 2Gi
+    limits.ephemeral-storage: 300Mi
+    configmaps: 1000
+    requests.storage: 5Gi
+    persistentvolumeclaims: 1000
+    replicationcontrollers: 1000
+    secrets: 1000
+    services: 1000
+    services.loadbalancers: 0
