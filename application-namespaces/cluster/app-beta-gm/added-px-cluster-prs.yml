@@ -1,0 +1,12 @@
+apiVersion: cert-manager.io/v1
+kind: Certificate
+metadata:
+  name: added-px-cluster
+  namespace: added-px-cluster-prs
+spec:
+  secretName: added-px-cluster-tls
+  issuerRef:
+    name: production-certs
+    kind: ClusterIssuer
+  dnsNames:
+    - '*.added-px-cluster.beta.gm.powerapp.cloud'
