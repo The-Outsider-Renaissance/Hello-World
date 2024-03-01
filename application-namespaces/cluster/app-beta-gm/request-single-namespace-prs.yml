@@ -1,0 +1,12 @@
+apiVersion: cert-manager.io/v1alpha3
+kind: Certificate
+metadata:
+  name: request-single-namespace
+  namespace: request-single-namespace-prs
+spec:
+  secretName: request-single-namespace-tls
+  issuerRef:
+    name: production-certs
+    kind: ClusterIssuer
+  dnsNames:
+    - '*.request-single-namespace.beta.gm.powerapp.cloud'
