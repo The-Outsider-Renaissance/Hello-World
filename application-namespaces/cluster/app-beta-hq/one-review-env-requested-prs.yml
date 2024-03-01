@@ -1,0 +1,12 @@
+apiVersion: cert-manager.io/v1alpha3
+kind: Certificate
+metadata:
+  name: one-review-env-requested
+  namespace: one-review-env-requested-prs
+spec:
+  secretName: one-review-env-requested-tls
+  issuerRef:
+    name: production-certs
+    kind: ClusterIssuer
+  dnsNames:
+    - '*.one-review-env-requested.beta.hq.powerapp.cloud'
