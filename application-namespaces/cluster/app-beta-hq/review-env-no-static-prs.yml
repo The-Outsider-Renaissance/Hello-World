@@ -1,0 +1,12 @@
+apiVersion: cert-manager.io/v1alpha3
+kind: Certificate
+metadata:
+  name: review-env-no-static
+  namespace: review-env-no-static-prs
+spec:
+  secretName: review-env-no-static-tls
+  issuerRef:
+    name: production-certs
+    kind: ClusterIssuer
+  dnsNames:
+    - '*.review-env-no-static.beta.hq.powerapp.cloud'
