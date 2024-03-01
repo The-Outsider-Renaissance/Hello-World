@@ -1,0 +1,12 @@
+apiVersion: cert-manager.io/v1alpha3
+kind: Certificate
+metadata:
+  name: moist
+  namespace: moist-prs
+spec:
+  secretName: moist-tls
+  issuerRef:
+    name: production-certs
+    kind: ClusterIssuer
+  dnsNames:
+    - '*.moist.beta.px.powerapp.cloud'
