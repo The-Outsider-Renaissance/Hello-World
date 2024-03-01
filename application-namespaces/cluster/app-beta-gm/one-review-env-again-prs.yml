@@ -1,0 +1,12 @@
+apiVersion: cert-manager.io/v1alpha3
+kind: Certificate
+metadata:
+  name: one-review-env-again
+  namespace: one-review-env-again-prs
+spec:
+  secretName: one-review-env-again-tls
+  issuerRef:
+    name: production-certs
+    kind: ClusterIssuer
+  dnsNames:
+    - '*.one-review-env-again.beta.gm.powerapp.cloud'
